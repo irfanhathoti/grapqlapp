@@ -1,0 +1,64 @@
+---- Get All Users Data query-----
+query getAllUsers{
+  users{
+    id
+    firstName
+    lastName
+    email
+    password
+    qoutes{
+      by,
+      name,
+      
+    }
+}
+}
+
+---------get USer Data Query---------
+
+query getUser($userId:ID!){
+  user(id:$userId){
+    id,
+    firstName
+    lastName
+    email
+    qoutes{
+      by
+      name
+    }
+  }
+}
+
+
+---- Get USer qoutes data ---
+query quets{
+  iqoute(by:"2"){
+    name
+  }
+}
+
+
+---------get all questes---
+
+
+query getAllQuotes{
+ qoutes{
+    by
+    name
+  }
+}
+
+-----creating mutation for add user----
+
+mutation newUser($newUser:userInput!){
+  user:createUser(newUser:$newUser){
+    firstName
+    lastName
+    id
+    email,
+    password
+  }
+    
+}
+
+
